@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="Remote-PSS-23 (1917fa56-7100-473c-94ef-9b796f071b2d)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote-PSS-26 (3c2138d9-e977-4f87-90f6-211972fce698)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote-PSS-31 (40e4114d-9c07-47eb-9eaa-d15e048e4ca7)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/Test" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote170 (cf9e0494-a11e-43f0-9476-32d1229b0f43)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote51 (c31ba292-0987-4683-a61e-6669e6386eec)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote52 (7db28b52-a0cb-4901-9a38-bbfac5d5902d)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote53 (17d4e0ca-3105-44a0-bd72-90c60c8675e9)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote54 (4ee3b971-9dbd-4c43-84f8-49fd06acfaa8)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote55 (fb87a6ae-7953-4e0c-8e5b-3e141b7b1853)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote56 (fa5057e4-9051-49ec-b30d-e1267c8ea293)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="Remote71 (cfc86f02-72d0-4b5f-adb9-241c01dc7c3d)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="RemoteVitual (0197ff01-48b8-45e9-acca-f3ecbb11a5d4)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/lio/remoteProc" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-remotevitual" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-remotevitual" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

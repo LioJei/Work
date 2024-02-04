@@ -1,0 +1,7 @@
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\bin\Debug\Solution_test.exe
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\bin\Debug\Solution_test.pdb
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\obj\Debug\Solution_test.csproj.AssemblyReference.cache
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\obj\Debug\Solution_test.csproj.SuggestedBindingRedirects.cache
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\obj\Debug\Solution_test.csproj.CoreCompileInputs.cache
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\obj\Debug\Solution_test.exe
+D:\14621\project\c#_work\Test\Solution_test\Solution_test\obj\Debug\Solution_test.pdb
