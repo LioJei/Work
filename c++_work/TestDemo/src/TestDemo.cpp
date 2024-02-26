@@ -13,11 +13,11 @@ TestDemo::~TestDemo(){
     printf("Destroy TestDemo:%s\n", m_name);
 }
 
-void TestDemo::tPrint(const char *msg) {
+void TestDemo::TestPrint(const char *msg) {
     printf("%s:%s\n", m_name, msg);
 }
 
-std::vector<std::string> TestDemo::m_split(std::string str, const char* ch){
+std::vector<std::string> TestDemo::MySplit(std::string str, const char* ch){
     std::vector<std::string> vec;
     auto index = str.find(ch);
     while (-1 != index){
@@ -36,4 +36,28 @@ std::vector<std::string> TestDemo::m_split(std::string str, const char* ch){
     std::cout << "..." << std::endl;
 
     return vec;
+}
+
+void TestDemo::PrintTypeSize() {
+    printf("Size of char: %llu\n", sizeof(char));
+    printf("Size of char*: %llu\n", sizeof(char*));
+    printf("Size of int: %llu\n", sizeof(int));
+    printf("Size of int*: %llu\n", sizeof(int*));
+    printf("Size of float: %llu\n", sizeof(float));
+    printf("Size of float*: %llu\n", sizeof(float*));
+    printf("Size of double: %llu\n", sizeof(double));
+    printf("Size of double*: %llu\n", sizeof(double*));
+    printf("Size of size_t: %llu\n", sizeof(size_t));
+}
+
+int TestDemo::add(int val1, int val2) {
+    return val1+val2;
+}
+
+[[maybe_unused]] int TestDemo::sub(int val1, int val2) {
+    return val1-val2;
+}
+
+int TestDemo::compute(fptr ptr, int val1, int val2) {
+    return ptr(val1, val2);
 }

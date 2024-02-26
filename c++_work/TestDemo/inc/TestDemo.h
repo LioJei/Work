@@ -8,9 +8,9 @@
 ///头文件声明
 #include "headfile.h"
 ///定义声明
-//列举分割后字符串容器前N项
-#define SPLIT_SHOW_NUMBER   4
-#define STR2CHR(x)          (std::to_string(x).c_str())
+#define SPLIT_SHOW_NUMBER   4   //列举分割后字符串容器前N项
+#define STR2CHR(x)          (std::to_string(x).c_str()) //string转C字符
+typedef int (*fptr)(int, int);  //定义运算函数指针
 ///枚举声明
 enum E_calcCh{
     e_add = 0,
@@ -20,7 +20,7 @@ enum E_calcCh{
     e_mod,
     e_max,
     e_min,
-};
+};  //运算枚举
 
 class TestDemo {
 public:
@@ -38,14 +38,31 @@ public:
      * @param[in]:  msg(需打印的字符串)
      * @return:     None
      * */
-    void tPrint(const char* msg);
+    void TestPrint(const char* msg);
     /**
      * @brief:      字符串分割函数
      * @param[in]:  str(需分割的字符串)
      * @param[in]:  ch(分隔符号)
      * @return:     vec(分割完成的string容器)
      * */
-    static std::vector<std::string> m_split(std::string str, const char* ch);
+    static std::vector<std::string> MySplit(std::string str, const char* ch);
+    /**
+     * @brief:      打印各类型大小
+     * @return:     None
+     * */
+    static void PrintTypeSize();
+    /**
+     * @brief:      函数指针测试加
+     * */
+     static int add(int val1, int val2);
+    /**
+    * @brief:      函数指针测试减
+    * */
+    [[maybe_unused]] static int sub(int val1, int val2);
+    /**
+     * @brief:      函数指针测试
+     * */
+    static int compute(fptr ptr, int val1, int val2);
 
 private:
     const char* m_name; //实例名
