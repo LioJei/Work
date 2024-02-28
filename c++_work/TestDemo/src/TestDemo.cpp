@@ -1,10 +1,10 @@
 //
-// Created by Administrator on 2024/2/5.
+// Created by lio on 2024/2/5.
 //
 
 #include "TestDemo.h"
 
-TestDemo::TestDemo(const char* name) : m_name(name)
+[[maybe_unused]] TestDemo::TestDemo(const char* name) : m_name(name)
 {
     printf("Construct TestDemo:%s\n", m_name);
 }
@@ -13,11 +13,11 @@ TestDemo::~TestDemo(){
     printf("Destroy TestDemo:%s\n", m_name);
 }
 
-void TestDemo::TestPrint(const char *msg) {
+[[maybe_unused]] void TestDemo::TestPrint(const char *msg) {
     printf("%s:%s\n", m_name, msg);
 }
 
-std::vector<std::string> TestDemo::MySplit(std::string str, const char* ch){
+[[maybe_unused]] std::vector<std::string> TestDemo::MySplit(std::string str, const char* ch){
     std::vector<std::string> vec;
     auto index = str.find(ch);
     while (-1 != index){
@@ -28,6 +28,7 @@ std::vector<std::string> TestDemo::MySplit(std::string str, const char* ch){
     vec.push_back(str);
 
     index = 1;
+    std::cout << "[after split]:" << std::endl;
     for(const auto & iter : vec){
         std::cout << iter << " ";
         if (++index > SPLIT_SHOW_NUMBER)
@@ -38,7 +39,7 @@ std::vector<std::string> TestDemo::MySplit(std::string str, const char* ch){
     return vec;
 }
 
-void TestDemo::PrintTypeSize() {
+[[maybe_unused]] void TestDemo::PrintTypeSize() {
     printf("Size of char: %llu\n", sizeof(char));
     printf("Size of char*: %llu\n", sizeof(char*));
     printf("Size of int: %llu\n", sizeof(int));
@@ -50,7 +51,7 @@ void TestDemo::PrintTypeSize() {
     printf("Size of size_t: %llu\n", sizeof(size_t));
 }
 
-int TestDemo::add(int val1, int val2) {
+[[maybe_unused]] int TestDemo::add(int val1, int val2) {
     return val1+val2;
 }
 
@@ -58,6 +59,6 @@ int TestDemo::add(int val1, int val2) {
     return val1-val2;
 }
 
-int TestDemo::compute(fptr ptr, int val1, int val2) {
+[[maybe_unused]] int TestDemo::compute(fptr ptr, int val1, int val2) {
     return ptr(val1, val2);
 }
