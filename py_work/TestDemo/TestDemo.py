@@ -5,6 +5,9 @@ import shelve
 import openpyxl
 import time
 import datetime
+import smtplib
+import ssl
+from email.message import EmailMessage
 
 
 class TestDemo:
@@ -175,3 +178,26 @@ class TestDemo:
         self.test_print(time.time())
         self.test_print(datetime.datetime.now().
                         strftime('%Y-%m-%d %H:%M:%S %A'))
+
+    """
+    @brief:         邮件模块测试
+    """
+    def email_test(self):
+        self.test_print("start.")
+        key = "kbrdgdlrjhhsieeb"
+        EMAIL_ADDRESS="1462134792@qq.com"
+        EMAIL_PASSWORD=key
+        smtp=smtplib.SMTP("smtp.qq.com", 25)
+        context=ssl.create_default_context()
+        sender=EMAIL_ADDRESS
+        receiver=EMAIL_ADDRESS
+        subject="test subject"
+        body="test body"
+        msg=EmailMessage()
+        msg['subject']=subject
+        msg['from']=sender
+        msg['to']=receiver
+        msg.set_content(body)
+        with smtplib.SMTP_SSL("smtp.qq.com", 465, context=context) as smtp:
+            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            smtp.send_message(msg)

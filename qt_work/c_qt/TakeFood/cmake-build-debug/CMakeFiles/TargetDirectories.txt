@@ -1,0 +1,4 @@
+D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-debug/CMakeFiles/TakeFood.dir
+D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-debug/CMakeFiles/TakeFood_autogen.dir

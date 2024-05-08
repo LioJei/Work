@@ -13,15 +13,6 @@
 #define SPLIT_SHOW_NUMBER   4   //列举分割后字符串容器前N项
 #define STR2CHR(x)          (std::to_string(x).c_str()) //string转C字符
 typedef int (*fptr)(int, int);  //定义运算函数指针
-typedef struct m_node{
-    void *data;
-    struct m_node *next;
-} MyNode;   //链表节点结构体
-typedef struct m_linkedList{
-    MyNode *head;
-    MyNode *tail;
-    MyNode  *current;
-}LinkedList;
 ///枚举声明
 enum E_calcCh{
     e_add = 0,

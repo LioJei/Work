@@ -10,4 +10,5 @@ if __name__ == "__main__":
     # testDemo.file_read_write_test(os.getcwd()+'\\test_file\\mydata', 'b')
     # testDemo.calculate_test(20)
     # testDemo.excel_test('c')
-    testDemo.time_test()
+    # testDemo.time_test()
+    testDemo.email_test()
