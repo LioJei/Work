@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+             android:id="@+id/mainLayout"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:columnCount="2"
+             android:orientation="horizontal"
+        >
+    <Button
+            android:id="@+id/dspg"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="炖烧排骨" />
+
+    <Button
+            android:id="@+id/lhsr"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="辣红烧肉" />
+    <Button
+            android:id="@+id/tdnr"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="土豆牛肉" />
+
+    <Button
+            android:id="@+id/szrp"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="水煮肉片" />
+    <Button
+            android:id="@+id/mzjc"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="蜜汁鸡翅" />
+
+    <Button
+            android:id="@+id/lzjd"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="辣子鸡丁" />
+    <Button
+            android:id="@+id/sltds"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="酸辣土豆丝" />
+
+    <Button
+            android:id="@+id/fqcd"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:layout_gravity="fill"
+            android:text="番茄炒蛋" />
+    <EditText
+            android:id="@+id/menuText"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_columnSpan="2"/>
+    <EditText
+            android:id="@+id/addText"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_columnSpan="2"/>
+    <Button
+            android:id="@+id/addBtn"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:text="添加" />
+    <Button
+            android:id="@+id/sendBtn"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:text="发送" />
+    <Button
+            android:id="@+id/clearBtn"
+            android:layout_height="70dp"
+            android:layout_columnWeight = "1"
+            android:text="清空" />
+
+
+
+</GridLayout >

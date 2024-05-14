@@ -11,13 +11,19 @@ MainWindow::MainWindow(QMainWindow *parent) {
     status->setStyleSheet("QStatusBar::item{border: 0px}");
     this->setStatusBar(status);
     auto *statusLabel = new QLabel("❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤");
-    status->showMessage("版本号：v1.0");
+    status->showMessage(QString("版本号：v1.1"));
     status->addPermanentWidget(statusLabel);
     initial();
 }
 
 void MainWindow::on_sendMsgBtn_clicked() {
-    m_sender->setMsg("菜单", showStr);
+    sendMsgBtn->setDisabled(true);
+    bool result = m_sender->setMsg("菜单", showStr);
+    if (result)
+        QMessageBox::information(this, tr("小李报告！"), tr("点餐已收到，正在积极备餐！"));
+    else
+        QMessageBox::information(this, tr("小李报告！"), tr("没有发出去捏！是不是网络波动呀"));
+    sendMsgBtn->setEnabled(true);
 }
 
 void MainWindow::initial() {

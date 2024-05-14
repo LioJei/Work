@@ -12,6 +12,7 @@
 #include <QTextEdit>
 #include <QLineEdit>
 #include <QStatusBar>
+#include <QMessageBox>
 #include "sender.h"
 #include "food.h"
 
