@@ -1,11 +1,17 @@
 # ninja log v5
-9	57	0	CMakeFiles/TakeFood_autogen	71a1039b8038a9a1
-58	2870	7368571277395450	CMakeFiles/TakeFood.dir/mainwindow.cpp.obj	8b0eff117d039687
-3213	5029	7368556400990999	CMakeFiles/TakeFood.dir/sender.cpp.obj	2cb4dff4c8e58fc3
-9	57	0	TakeFood_autogen/mocs_compilation.cpp	71a1039b8038a9a1
-909	3295	7368556383642595	CMakeFiles/TakeFood.dir/food.cpp.obj	aef3c9072a6124bb
-9	57	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen	71a1039b8038a9a1
-1178	3326	7368568184586472	CMakeFiles/TakeFood.dir/TakeFood_autogen/mocs_compilation.cpp.obj	a05f22f4f64f2794
-9	57	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/TakeFood_autogen/mocs_compilation.cpp	71a1039b8038a9a1
-1184	3221	7368568183536485	CMakeFiles/TakeFood.dir/main.cpp.obj	23de8277917232c8
-2871	3059	7368571279225452	TakeFood.exe	8a85446035c305f
+3668	5833	7374387985336089	CMakeFiles/TakeFood.dir/sender.cpp.obj	973dbfa2675fccc7
+63	2478	7374388536274349	CMakeFiles/TakeFood.dir/mainwindow.cpp.obj	27b350044c306f56
+13	67	0	CMakeFiles/TakeFood_autogen	483f6b62132ee37f
+1148	3708	7374387964095014	CMakeFiles/TakeFood.dir/food.cpp.obj	549238e6c7b62000
+13	67	0	TakeFood_autogen/mocs_compilation.cpp	483f6b62132ee37f
+1143	3668	7374387963650713	CMakeFiles/TakeFood.dir/TakeFood_autogen/mocs_compilation.cpp.obj	56f2b9521bb7cf
+13	67	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen	483f6b62132ee37f
+13	67	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/TakeFood_autogen/mocs_compilation.cpp	483f6b62132ee37f
+1153	3662	7374387963494457	CMakeFiles/TakeFood.dir/main.cpp.obj	50e1609e1e1b2285
+144	588	7374395666367103	TakeFood.exe	afe30af52fd7df16
+4	684	7374400416083608	build.ninja	9985a7154bea9ee6
+68	144	7374395662009460	CMakeFiles/TakeFood.dir/version.rc.obj	e5e0b20b0b338120
+10	53	0	CMakeFiles/TakeFood_autogen	483f6b62132ee37f
+10	53	0	TakeFood_autogen/mocs_compilation.cpp	483f6b62132ee37f
+10	53	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen	483f6b62132ee37f
+10	53	0	D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/TakeFood_autogen/mocs_compilation.cpp	483f6b62132ee37f

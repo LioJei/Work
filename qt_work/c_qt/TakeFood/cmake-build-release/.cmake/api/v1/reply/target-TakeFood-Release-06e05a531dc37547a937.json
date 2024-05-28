@@ -189,6 +189,88 @@
 				3,
 				4
 			]
+		},
+		{
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NO_DEBUG"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release"
+				},
+				{
+					"path" : "D:/project/work/work/qt_work/c_qt/TakeFood"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "D:/project/work/work/qt_work/c_qt/TakeFood/cmake-build-release/TakeFood_autogen/include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "D:/project/work/work/qt_work/c_qt/TakeFood/inc"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include/QtCore"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/./mkspecs/win32-g++"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include/QtGui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include/QtANGLE"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include/QtWidgets"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "D:/software/qt/5.14.1/mingw73_64/include/QtNetwork"
+				}
+			],
+			"language" : "RC",
+			"sourceIndexes" : 
+			[
+				5
+			]
 		}
 	],
 	"dependencies" : 
@@ -260,7 +342,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -295,6 +378,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "sender.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "version.rc",
 			"sourceGroupIndex" : 0
 		}
 	],

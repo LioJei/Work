@@ -5,12 +5,13 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QMainWindow *parent) {
+    this->setWindowIcon(QIcon("../icon.png"));
     this->setWindowTitle("❤️❤️❤️❤️超级无敌漂亮海霞点餐菜谱❤️❤️❤️❤️");
     status = new QStatusBar(this);
     status->setObjectName("状态栏");
     status->setStyleSheet("QStatusBar::item{border: 0px}");
     this->setStatusBar(status);
-    auto *statusLabel = new QLabel("❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤");
+    auto *statusLabel = new QLabel("❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️");
     status->showMessage(QString("版本号：v1.1"));
     status->addPermanentWidget(statusLabel);
     initial();

@@ -31,9 +31,9 @@ include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 #编译选项句柄
 set(WINDOWS_RELEASE 1)
 if (WINDOWS_RELEASE)
-    add_executable(${PROJECT_NAME} WIN32 ${DIRS_SRCS})
+    add_executable(${PROJECT_NAME} WIN32 ${DIRS_SRCS} version.rc)
 else()
-    add_executable(${PROJECT_NAME} ${DIRS_SRCS})
+    add_executable(${PROJECT_NAME} ${DIRS_SRCS} version.rc)
 endif ()
 
 #链接库
