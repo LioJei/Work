@@ -1,68 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7c825700-9aaa-4a03-a7f9-56cea430d129" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/JavaWork.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../py_work/kivyDemo/pythonProject1/.idea/pythonProject1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestDemo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TestDemo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/testDemo/MainJava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/testDemo/MainJavaTest$FreshJuiceSize.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/testDemo/MainJavaTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testDemo/src/MainJava.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testDemo/src/MainJavaTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testDemo/testDemo.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.cmake/api/v1/reply/cache-v2-a79a99c2cf1ff5a81bf7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.cmake/api/v1/reply/cmakeFiles-v1-eb9afeebee9a85ca0241.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.cmake/api/v1/reply/index-2024-05-08T07-13-51-0255.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.cmake/api/v1/reply/toolchains-v1-e30bef37861028a12df9.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/3.27.8/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood.dir/TakeFood_autogen/mocs_compilation.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood.dir/food.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood.dir/mainwindow.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood.dir/sender.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen.dir/AutogenInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen.dir/AutogenInfo.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen.dir/AutogenUsed.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/TakeFood_autogen.dir/ParseCache.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/clion-Release-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/clion-Release-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/CMakeFiles/rules.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/D3Dcompiler_47.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Qt5Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Qt5Gui.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Qt5Network.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Qt5Svg.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Qt5Widgets.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/TakeFood.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/TakeFood.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestDemo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/MainJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/MainJava.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/build.ninja" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/libEGL.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/libGLESV2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/libgcc_s_seh-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/libstdc++-6.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/libwinpthread-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/opengl32sw.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/mainwindow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/mainwindow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/mainwindow.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/mainwindow.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -82,23 +31,36 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2gR8WZrjZsVfBqNvKYOwCIL3Cgv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../setup/mail.jar" />
-    <property name="project.structure.last.edited" value="模块" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/project/work/work/JavaWork/TestDemo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;应用程序.MainJava.executor&quot;: &quot;Run&quot;
+  }
+}</component>
   <component name="RunManager">
     <configuration name="MainJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.MainJava" />
@@ -119,6 +81,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -130,10 +99,25 @@
       <workItem from="1715649066636" duration="1989000" />
       <workItem from="1715651100019" duration="1398000" />
       <workItem from="1715652763825" duration="1657000" />
+      <workItem from="1724133245600" duration="245000" />
+      <workItem from="1724134009514" duration="10362000" />
+      <workItem from="1724202589528" duration="19007000" />
+      <workItem from="1724288822334" duration="14740000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
