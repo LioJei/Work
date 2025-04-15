@@ -20,8 +20,9 @@
 #include <sstream>
 #include <memory>
 
-#define FILE_SIZE   (1024*1024) //最大文件大小1MB
-#define NAME_SIZE   20          //最大通信接收字节数
+#define FILE_NAME   "/home/lio/software/logfile.log"    //日志文件名
+#define FILE_SIZE   (1024*1024)                         //最大文件大小1MB
+#define NAME_SIZE   20                                  //最大通信接收字节数
 //TODO:数据结构待定
 //通信协议
 struct Data {
