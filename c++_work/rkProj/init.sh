@@ -15,7 +15,13 @@ WORKDIR="/home/lio/software/"
 SERVFILE="/etc/systemd/system/rk_initial.service"
 # 使用touch命令创建文件
 sudo touch "$SERVFILE"
+if [ -f "$SERVFILE" ]; then
+    echo "Server file <$SERVFILE> add succeed."
+else
+    echo "Server file <$SERVFILE> add failed."
+fi
 # 初始化服务内容
+echo "Initial Server config..."
 sudo cat  << EOF > $SERVFILE
 [Unit]
 Description=RkProj Daemon Service
@@ -30,10 +36,13 @@ WorkingDirectory=$WORKDIR
 WantedBy=multi-lio.target
 EOF
 # 重新加载systemd配置
+echo "Restart System Server."
 sudo systemctl daemon-reload
 # 启动服务
+echo "Start My Server."
 sudo systemctl start rk_initial
 # 设置开机自启
+echo "Set My Server PowerBoot."
 sudo systemctl enable rk_initial
 # 关闭服务< sudo systemctl stop rk_initial >
 # 关闭自启< systemctl disable rk_initial >
