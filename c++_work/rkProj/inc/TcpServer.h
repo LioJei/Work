@@ -11,11 +11,11 @@
 #include "headfile.h"
 #include "Logger.h"
 
-#define MAX_CLIENTS 10
-#define RECVPORT    8080
-#define SENDPORT    8888
-#define RECVIP      "192.168.153.144"
-#define SENDIP      "127.0.0.1"
+#define MAX_CLIENTS 10                  //最大客户端监听数
+#define RECVPORT    8080                //接收端端口
+#define SENDPORT    8888                //发送端端口
+#define RECVIP      "192.168.153.144"   //接收端IP
+#define SENDIP      "127.0.0.1"         //发送端IP
 
 class TCPServer {
 public:
@@ -38,13 +38,13 @@ public:
     void start();
 
 private:
-    int server_fd;
-    struct sockaddr_in address{};
-    int opt;
-    int addrlen;
-    int client_sockets[MAX_CLIENTS]{};
-    pthread_mutex_t data_mutex{};
-    std::shared_ptr<Logger> m_logger;
+    int server_fd;                      //套接字句柄
+    struct sockaddr_in address{};       //套接字结构体
+    int opt;                            //套接字配置句柄
+    int addrlen;                        //套接字地址长度
+    int client_sockets[MAX_CLIENTS]{};  //接收客户端套接字句柄组
+    pthread_mutex_t data_mutex{};       //数据读写锁，防止冲突
+    std::shared_ptr<Logger> m_logger;   //日志写入句柄
 
     /**
     * @brief: 数据流下层处理，做转发数据用，内部实现，不对外开放该接口

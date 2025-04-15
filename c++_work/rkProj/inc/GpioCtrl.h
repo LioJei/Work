@@ -49,8 +49,8 @@ public:
     char readValue();
 
 private:
-    const char *m_pin;
-    std::shared_ptr<Logger> m_logger;
+    const char *m_pin;                  //所需控制的io口pin脚
+    std::shared_ptr<Logger> m_logger;   //日志写入句柄
 };
 
 #endif //RKPROJ_GPIOCTRL_H

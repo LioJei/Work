@@ -8,6 +8,7 @@
 #define LOGGER_H
 
 #include "headfile.h"
+//外部写入日志宏
 #define LOG(logger, level, message) logger->log(level, message, __FILE__, __LINE__)
 
 class Logger {
@@ -41,8 +42,11 @@ public:
     void log(Level level,  const std::string &message, const std::string &file, int line);
 
 private:
+    //日志写入锁，防止冲突
     pthread_mutex_t data_mutex{};
+    //写入日志文件流
     std::ofstream logFile;
+    //日志文件size最大限制
     std::size_t maxFileSize;
 
     /**
