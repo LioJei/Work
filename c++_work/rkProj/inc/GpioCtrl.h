@@ -8,14 +8,16 @@
 #define RKPROJ_GPIOCTRL_H
 
 #include "headfile.h"
+#include "Logger.h"
 
 class GpioCtrl {
 public:
     /**
      * @brief: 初始化构造，声明pin脚，并且导出该io脚
      * @param[in]: pin(所需控制的io脚)
+     * @param[in]: logger(共享日志指针)
      * */
-    explicit GpioCtrl(const char *pin);
+    explicit GpioCtrl(const char *pin, std::shared_ptr<Logger> logger);
 
     /**
      * @brief: 析构函数，在析构里面解导出io脚
@@ -48,6 +50,7 @@ public:
 
 private:
     const char *m_pin;
+    std::shared_ptr<Logger> m_logger;
 };
 
 #endif //RKPROJ_GPIOCTRL_H

@@ -4,10 +4,15 @@
 
 #include "GpioCtrl.h"
 
-GpioCtrl::GpioCtrl(const char *pin) : m_pin(pin) {
+#include <utility>
+
+GpioCtrl::GpioCtrl(const char *pin, std::shared_ptr<Logger> logger) :
+m_pin(pin),
+m_logger(std::move(logger))
+{
     FILE *fp = fopen("/sys/class/gpio/export", "w");
-    if (fp == NULL) {
-        perror("Failed to open export");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to open export");
         exit(EXIT_FAILURE);
     }
     fprintf(fp, "%s", m_pin);
@@ -16,8 +21,8 @@ GpioCtrl::GpioCtrl(const char *pin) : m_pin(pin) {
 
 GpioCtrl::~GpioCtrl() {
     FILE *fp = fopen("/sys/class/gpio/unexport", "w");
-    if (fp == NULL) {
-        perror("Failed to open unexport");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to open unexport");
         exit(EXIT_FAILURE);
     }
     fprintf(fp, "%s", m_pin);
@@ -28,8 +33,8 @@ void GpioCtrl::setDirection(const char *direction) {
     char path[35];
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/direction", m_pin);
     FILE *fp = fopen(path, "w");
-    if (fp == NULL) {
-        perror("Failed to open direction");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to set direction");
         exit(EXIT_FAILURE);
     }
     fprintf(fp, "%s", direction);
@@ -41,8 +46,8 @@ const char *GpioCtrl::readDirection() {
     char path[35];
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/direction", m_pin);
     FILE *fp = fopen(path, "r");
-    if (fp == NULL) {
-        perror("Failed to open direction");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to read direction");
         exit(EXIT_FAILURE);
     }
     fscanf(fp, "%3s", direction); // 读取方向
@@ -55,8 +60,8 @@ void GpioCtrl::setValue(const char *level) {
     char path[30];
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/value", m_pin);
     FILE *fp = fopen(path, "w");
-    if (fp == NULL) {
-        perror("Failed to open value");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to set value");
         exit(EXIT_FAILURE);
     }
     fprintf(fp, "%s", level);
@@ -67,8 +72,8 @@ char GpioCtrl::readValue() {
     char path[30];
     snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/value", m_pin);
     FILE *fp = fopen(path, "r");
-    if (fp == NULL) {
-        perror("Failed to open value");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to read value");
         exit(EXIT_FAILURE);
     }
     char value;

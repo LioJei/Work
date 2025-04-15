@@ -3,6 +3,7 @@ project(rkProj)
 set(CMAKE_CXX_STANDARD 11)
 
 find_package(Threads)
+
 aux_source_directory(. SRC)
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src SRC)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
