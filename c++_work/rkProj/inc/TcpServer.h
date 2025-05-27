@@ -1,12 +1,12 @@
 /**
-* Copyright (c) 2025 cdly.Co.,Ltd. All rights reserved.
+* Copyright (c) 2025 CHENGDU LIYANG INFORMATION TECHNOLOGY Co.,Ltd. All rights reserved.
 * @brief Tcp数据交互接口
 * @author lijunjie
 * @date 2025/4/10
 */
 
-#ifndef RKPROJ_TCPSERVER_H
-#define RKPROJ_TCPSERVER_H
+#ifndef _RKPROJ_TCPSERVER_H
+#define _RKPROJ_TCPSERVER_H
 
 #include "headfile.h"
 #include "Logger.h"
@@ -35,7 +35,7 @@ public:
     /**
      * @brief: 服务端启动函数，开始通信
      * */
-    void start();
+    [[noreturn]] void start();
 
 private:
     int server_fd;                      //套接字句柄
@@ -53,4 +53,4 @@ private:
 };
 
 
-#endif //RKPROJ_TCPSERVER_H
+#endif //_RKPROJ_TCPSERVER_H

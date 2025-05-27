@@ -1,11 +1,11 @@
 /**
-* Copyright (c) 2025 cdly.Co.,Ltd. All rights reserved.
+* Copyright (c) 2025 CHENGDU LIYANG INFORMATION TECHNOLOGY Co.,Ltd. All rights reserved.
 * @brief 日志类，主要保存程序运行期间的重要信息
 * @author lijunjie
 * @date 2025/4/10
 */
-#ifndef LOGGER_H
-#define LOGGER_H
+#ifndef _LOGGER_H
+#define _LOGGER_H
 
 #include "headfile.h"
 //外部写入日志宏
@@ -50,6 +50,11 @@ private:
     std::size_t maxFileSize;
 
     /**
+     * @brief: 获取日志文件文件名，为内部接口，不对外开放
+     * @param[in]:  fullPath(绝对路径)
+     * */
+    static std::string getFileName(const std::string &fullPath);
+    /**
      * @brief: 获取日志记录的当下时间，为内部接口，不对外开放
      * */
     static std::string getCurrentTime();
@@ -72,4 +77,4 @@ private:
     void checkFileSize();
 };
 
-#endif // LOGGER_H
+#endif // _LOGGER_H

@@ -1,5 +1,5 @@
 /**
-* Copyright (c) 2025 cdly.Co.,Ltd. All rights reserved.
+* Copyright (c) 2025 CHENGDU LIYANG INFORMATION TECHNOLOGY Co.,Ltd. All rights reserved.
 * @brief Gpio控制接口
 * @author lijunjie
 * @date 2025/4/10
@@ -50,7 +50,20 @@ public:
 
 private:
     const char *m_pin;                  //所需控制的io口pin脚
-    std::shared_ptr<Logger> m_logger;   //日志写入句柄
+    std::shared_ptr<Logger> m_logger;   //日志写入句柄z
+    /**
+    * @brief: 内部写入接口
+    * @param[in]: control(value/export/direction)
+    * @param[in]: data(数据句柄)
+    * */
+    int gpioWrite(const char *control,  const char *data);
+    /**
+    * @brief: 内部读取接口
+    * @param[in]: control(value/export/direction)
+    * @param[in]: data(数据句柄)
+    * @return: gpio信息
+    * */
+    int gpioRead(const char *control, char *data);
 };
 
 #endif //RKPROJ_GPIOCTRL_H

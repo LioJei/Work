@@ -12,8 +12,14 @@
 #include <vector>
 #include <cstring>
 #include <unistd.h>
+#include <csignal>
 #include <fcntl.h>
 #include <iostream>
-#include <assert.h>
+#include <cassert>
+#include <cmath>
+#include <ctime>
+#include <csignal>
+#include <cerrno>
+#include <thread>
 
 #endif //HEAD_FILE_H

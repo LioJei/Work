@@ -15,29 +15,31 @@ std::string floatToString(float value) {
     return str;
 }
 
-TCPServer::TCPServer(const char *ip, int port, std::shared_ptr<Logger> logger):
-m_logger(std::move(logger))
-{
+TCPServer::TCPServer(const char *ip, int port, std::shared_ptr<Logger> logger) :
+        m_logger(std::move(logger)) {
     opt = 1;
     addrlen = sizeof(address);
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
-    if (server_fd == 0) {
-        LOG(m_logger, Logger::ERROR, "socket failed");
+    if (server_fd) {
+        LOG(m_logger, Logger::ERROR, "socket failed" + std::string(strerror(errno)));
         exit(EXIT_FAILURE);
     }
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt))) {
-        LOG(m_logger, Logger::ERROR, "setsockopt");
+        LOG(m_logger, Logger::ERROR, "setsockopt" + std::string(strerror(errno)));
+        close(server_fd);
         exit(EXIT_FAILURE);
     }
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = inet_addr(ip);
     address.sin_port = htons(port);
     if (bind(server_fd, (struct sockaddr *) &address, sizeof(address)) < 0) {
-        LOG(m_logger, Logger::ERROR, "bind failed");
+        LOG(m_logger, Logger::ERROR, "bind failed" + std::string(strerror(errno)));
+        close(server_fd);
         exit(EXIT_FAILURE);
     }
     if (listen(server_fd, 3) < 0) {
-        LOG(m_logger, Logger::ERROR, "listen error");
+        LOG(m_logger, Logger::ERROR, "listen error" + std::string(strerror(errno)));
+        close(server_fd);
         exit(EXIT_FAILURE);
     }
     LOG(m_logger, Logger::INFO, "Server Starting...");
@@ -52,11 +54,14 @@ TCPServer::~TCPServer() {
             close(client_socket);
         }
     }
+    if (server_fd != -1) {
+        close(server_fd);
+    }
     pthread_mutex_destroy(&data_mutex);
 }
 
 
-void TCPServer::start() {
+[[noreturn]] void TCPServer::start() {
     int new_socket, max_sd, sd, activity;
     Data data = {0};
     pthread_t tid;
@@ -70,14 +75,13 @@ void TCPServer::start() {
 
         // 将所有活动的客户端socket添加到集合中
         for (int client_socket: client_sockets) {
-            sd = client_socket;
             // 如果有效的socket描述符，则添加到集合中
-            if (sd > 0) {
-                FD_SET(sd, &readfds);
-            }
-            // 更新最大socket描述符
-            if (sd > max_sd) {
-                max_sd = sd;
+            if (client_socket > 0) {
+                FD_SET(client_socket, &readfds);
+                // 更新最大socket描述符
+                if (client_socket > max_sd){
+                    max_sd = client_socket;
+                }
             }
         }
 
@@ -88,16 +92,16 @@ void TCPServer::start() {
 
         activity = select(max_sd + 1, &readfds, nullptr, nullptr, &timeout);
         if ((activity < 0) && (errno != EINTR)) {
-            LOG(m_logger, Logger::ERROR, "select error");
-            exit(EXIT_FAILURE);
+            LOG(m_logger, Logger::ERROR, "select error" + std::string(strerror(errno)));
+          continue;     //继续尝试
         }
 
         // 如果有新的连接请求
         if (FD_ISSET(server_fd, &readfds)) {
             if ((new_socket = accept(server_fd, (struct sockaddr *) &address,
                                      (socklen_t *) &addrlen)) < 0) {
-                LOG(m_logger, Logger::ERROR, "accept error");
-                exit(EXIT_FAILURE);
+                LOG(m_logger, Logger::ERROR, "accept error" + std::string(strerror(errno)));
+                continue;       //继续尝试
             }
             LOG(m_logger, Logger::INFO, "New client has connected, client socket fd is:" + std::to_string(new_socket));
             // 将新的socket添加到客户端数组中
@@ -115,7 +119,9 @@ void TCPServer::start() {
             sd = client_socket;
             if (FD_ISSET(sd, &readfds)) {
                 // 读取数据
+                pthread_mutex_lock(&data_mutex);
                 ssize_t valread = read(sd, &data, sizeof(data));
+                pthread_mutex_unlock(&data_mutex);
                 if (valread == 0) {
                     // 客户端关闭连接
                     getpeername(sd, (struct sockaddr *) &address, (socklen_t *) &addrlen);
@@ -124,14 +130,19 @@ void TCPServer::start() {
                         ",PORT:" + std::to_string(ntohs(address.sin_port)));
                     close(sd);
                     client_socket = 0;
-                } else {
+                } else if (valread < 0) {
+                    LOG(m_logger, Logger::ERROR, "read error: " + std::string(strerror(errno)));
+                    close(sd);
+                    client_socket = 0;
+                }else {
                     // 处理接收到的数据
                     pthread_mutex_lock(&data_mutex);
                     LOG(m_logger, Logger::INFO, "Received:" + std::to_string(data.id) + "," + floatToString(data.value)
                                                 + "," + std::string(data.name));
                     pthread_mutex_unlock(&data_mutex);
-                    pthread_create(&tid, nullptr, [](void* arg) -> void* {
-                        return static_cast<TCPServer*>(arg)->sendMsg(arg);}, &data);
+                    pthread_create(&tid, nullptr, [](void *arg) -> void * {
+                        return static_cast<TCPServer *>(arg)->sendMsg(arg);
+                    }, &data);
                     pthread_detach(tid);
                 }
             }
@@ -140,38 +151,36 @@ void TCPServer::start() {
 }
 
 void *TCPServer::sendMsg(void *arg) {
-    int sock = 0;
-    struct sockaddr_in serv_addr{};
-    Data data{};
-
     // 复制数据以避免数据竞争
-    data = *(Data *) arg;
+    Data data = *(Data *) arg;
 
     // 创建socket
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-        LOG(m_logger, Logger::ERROR, "Socket creation error");
+    int sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) {
+        LOG(m_logger, Logger::ERROR, "Socket creation error" + std::string(strerror(errno)));
         return nullptr;
     }
 
+    struct sockaddr_in serv_addr{};
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(SENDPORT);
     // 将IPv4地址从文本转换为二进制形式
     if (inet_pton(AF_INET, SENDIP, &serv_addr.sin_addr) <= 0) {
-        LOG(m_logger, Logger::ERROR, "Invalid address/ Address not supported");
+        LOG(m_logger, Logger::ERROR, "Invalid address/ Address not supported" + std::string(strerror(errno)));
         close(sock);
         return nullptr;
     }
 
     // 连接到服务器
     if (connect(sock, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
-        LOG(m_logger, Logger::ERROR, "Connection Failed");
+        LOG(m_logger, Logger::ERROR, "Connection Failed" + std::string(strerror(errno)));
         close(sock);
         return nullptr;
     }
 
     // 发送数据
     if (send(sock, &data, sizeof(data), 0) < 0) {
-        LOG(m_logger, Logger::ERROR, "Send failed");
+        LOG(m_logger, Logger::ERROR, "Send failed" + std::string(strerror(errno)));
     }
 
     close(sock);

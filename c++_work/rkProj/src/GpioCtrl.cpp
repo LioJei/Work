@@ -10,75 +10,91 @@ GpioCtrl::GpioCtrl(const char *pin, std::shared_ptr<Logger> logger) :
 m_pin(pin),
 m_logger(std::move(logger))
 {
-    FILE *fp = fopen("/sys/class/gpio/export", "w");
-    if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to open export");
+    if (gpioWrite("export", m_pin) != 0) {
         exit(EXIT_FAILURE);
     }
-    fprintf(fp, "%s", m_pin);
-    fclose(fp);
 }
 
 GpioCtrl::~GpioCtrl() {
-    FILE *fp = fopen("/sys/class/gpio/unexport", "w");
-    if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to open unexport");
-        exit(EXIT_FAILURE);
+    if (gpioWrite("unexport", m_pin) != 0) {
+
     }
-    fprintf(fp, "%s", m_pin);
-    fclose(fp);
 }
 
 void GpioCtrl::setDirection(const char *direction) {
-    char path[35];
-    snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/direction", m_pin);
-    FILE *fp = fopen(path, "w");
-    if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to set direction");
+    if (gpioWrite("direction", direction) != 0) {
         exit(EXIT_FAILURE);
     }
-    fprintf(fp, "%s", direction);
-    fclose(fp);
 }
 
 const char *GpioCtrl::readDirection() {
     static char direction[4]; // "in" 或 "out" + null terminator
-    char path[35];
-    snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/direction", m_pin);
-    FILE *fp = fopen(path, "r");
-    if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to read direction");
-        exit(EXIT_FAILURE);
+    if (gpioRead("direction", direction) != 0) {
+        return nullptr; // 或者您可以选择其他合适的处理方式
     }
-    fscanf(fp, "%3s", direction); // 读取方向
-    fclose(fp);
-
-    return direction; // 返回方向
+    return direction;
 }
 
 void GpioCtrl::setValue(const char *level) {
-    char path[30];
-    snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/value", m_pin);
-    FILE *fp = fopen(path, "w");
-    if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to set value");
+    if (gpioWrite("value", level) != 0) {
         exit(EXIT_FAILURE);
     }
-    fprintf(fp, "%s", level);
-    fclose(fp);
 }
 
 char GpioCtrl::readValue() {
-    char path[30];
-    snprintf(path, sizeof(path), "/sys/class/gpio/gpio%s/value", m_pin);
+    char value[2]; // 用于存储字符和null terminator
+    if (gpioRead("value", value) != 0) {
+        return '\0'; // 或者其他合适的错误标志
+    }
+    return value[0];
+}
+
+int GpioCtrl::gpioWrite(const char *control, const char *data) {
+    char path[40] = "/sys/class/gpio/";
+    if (strcmp(control, "export") == 0 || strcmp(control, "unexport") == 0) {
+        strncat(path, control, sizeof(path) - strlen(path) - 1);
+    } else {
+        strncat(path, "gpio", sizeof(path) - strlen(path) - 1);
+        strncat(path, m_pin, sizeof(path) - strlen(path) - 1);
+        strncat(path, "/", sizeof(path) - strlen(path) - 1);
+        strncat(path, control, sizeof(path) - strlen(path) - 1);
+    }
+
+    FILE *fp = fopen(path, "w");
+    if (fp == nullptr) {
+        LOG(m_logger, Logger::ERROR, "Failed to open %s", path + std::string(strerror(errno)));
+        return -1;
+    }
+
+    if (fprintf(fp, "%s", data) < 0) {
+        LOG(m_logger, Logger::ERROR, "Failed to write to %s", path + std::string(strerror(errno)));
+        fclose(fp);
+        return -1;
+    }
+
+    fclose(fp);
+    return 0;
+}
+
+int GpioCtrl::gpioRead(const char *control, char *data) {
+    char path[40] = "/sys/class/gpio/";
+    strncat(path, "gpio", sizeof(path) - strlen(path) - 1);
+    strncat(path, m_pin, sizeof(path) - strlen(path) - 1);
+    strncat(path, "/", sizeof(path) - strlen(path) - 1);
+    strncat(path, control, sizeof(path) - strlen(path) - 1);
+
     FILE *fp = fopen(path, "r");
     if (fp == nullptr) {
-        LOG(m_logger, Logger::ERROR, "Failed to read value");
-        exit(EXIT_FAILURE);
+        LOG(m_logger, Logger::ERROR, "Failed to open %s", path + std::string(strerror(errno)));
+        return -1;
     }
-    char value;
-    fscanf(fp, "%c", &value);
-    fclose(fp);
 
-    return value;
+    if (fscanf(fp, "%3s", data) != 1) {
+        LOG(m_logger, Logger::ERROR, "Failed to read from %s", path + std::string(strerror(errno)));
+        fclose(fp);
+        return -1;
+    }
+
+    fclose(fp);
+    return 0;
 }
