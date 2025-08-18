@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c825700-9aaa-4a03-a7f9-56cea430d129" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestDemo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TestDemo/com/MainJava.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/MainJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/MainJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../qt_work/c_qt/TakeFood/cmake-build-release/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/MyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../htmlWork/testDemo/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../htmlWork/testDemo/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/3.5.1/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/3.5.1/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/3.5.1/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/3.5.1/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/3.5.1/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/clion-Debug-ubuntu16-log.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/clion-environment.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/CMakeFiles/rkProj.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/cmake-build-debug-ubuntu16/rkProj.cbp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../c++_work/rkProj/init.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../c++_work/rkProj/init.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +46,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -29,6 +55,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -39,24 +68,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/project/work/work/JavaWork/TestDemo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
-    &quot;应用程序.MainJava.executor&quot;: &quot;Run&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/project/work/work/JavaWork/TestDemo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.MainJava.executor": "Run"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainJava" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.MainJava" />
@@ -98,11 +127,23 @@
       <workItem from="1724133245600" duration="245000" />
       <workItem from="1724134009514" duration="10362000" />
       <workItem from="1724202589528" duration="19007000" />
-      <workItem from="1724288822334" duration="572000" />
+      <workItem from="1724288822334" duration="14740000" />
+      <workItem from="1744788717732" duration="66000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

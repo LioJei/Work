@@ -7,6 +7,7 @@ int main() {
     testDemo.TestPrint(STR2CHR(calcFunc(3, 4, e_max)));
     TestDemo::PrintTypeSize();
     testDemo.TestPrint(STR2CHR(TestDemo::compute(TestDemo::sub,7,4)));
+    testDemo.time_test();
 
     return 0;
 }

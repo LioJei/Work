@@ -177,6 +177,33 @@ src/GpioCtrl.cpp.s:
 	$(MAKE) -f CMakeFiles/rkProj.dir/build.make CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.s
 .PHONY : src/GpioCtrl.cpp.s
 
+src/Logger.o: src/Logger.cpp.o
+
+.PHONY : src/Logger.o
+
+# target to build an object file
+src/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/rkProj.dir/build.make CMakeFiles/rkProj.dir/src/Logger.cpp.o
+.PHONY : src/Logger.cpp.o
+
+src/Logger.i: src/Logger.cpp.i
+
+.PHONY : src/Logger.i
+
+# target to preprocess a source file
+src/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/rkProj.dir/build.make CMakeFiles/rkProj.dir/src/Logger.cpp.i
+.PHONY : src/Logger.cpp.i
+
+src/Logger.s: src/Logger.cpp.s
+
+.PHONY : src/Logger.s
+
+# target to generate assembly for a file
+src/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/rkProj.dir/build.make CMakeFiles/rkProj.dir/src/Logger.cpp.s
+.PHONY : src/Logger.cpp.s
+
 src/TcpServer.o: src/TcpServer.cpp.o
 
 .PHONY : src/TcpServer.o
@@ -219,6 +246,9 @@ help:
 	@echo "... src/GpioCtrl.o"
 	@echo "... src/GpioCtrl.i"
 	@echo "... src/GpioCtrl.s"
+	@echo "... src/Logger.o"
+	@echo "... src/Logger.i"
+	@echo "... src/Logger.s"
 	@echo "... src/TcpServer.o"
 	@echo "... src/TcpServer.i"
 	@echo "... src/TcpServer.s"

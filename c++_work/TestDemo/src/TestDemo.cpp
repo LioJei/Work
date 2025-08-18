@@ -62,3 +62,22 @@ TestDemo::~TestDemo(){
 [[maybe_unused]] int TestDemo::compute(fptr ptr, int val1, int val2) {
     return ptr(val1, val2);
 }
+
+[[maybe_unused]] void TestDemo::time_test(){
+    // 记录开始时间点
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // 要测试的代码段
+    for(int i = 0; i < 6000000; i++) {
+        // 模拟耗时操作
+    }
+
+    // 记录结束时间点
+    auto end = std::chrono::high_resolution_clock::now();
+
+    // 计算时间差（单位：毫秒）
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    SetConsoleOutputCP(CP_UTF8);
+    std::cout << "执行耗时: " << duration.count() << " 毫秒" << std::endl;
+
+}

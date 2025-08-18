@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rkProj.dir/main.cpp.o"
+  "CMakeFiles/rkProj.dir/src/Logger.cpp.o"
   "CMakeFiles/rkProj.dir/src/TcpServer.cpp.o"
   "CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o"
   "rkProj.pdb"

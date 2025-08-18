@@ -81,9 +81,33 @@ CMakeFiles/rkProj.dir/main.cpp.o.provides: CMakeFiles/rkProj.dir/main.cpp.o.requ
 CMakeFiles/rkProj.dir/main.cpp.o.provides.build: CMakeFiles/rkProj.dir/main.cpp.o
 
 
+CMakeFiles/rkProj.dir/src/Logger.cpp.o: CMakeFiles/rkProj.dir/flags.make
+CMakeFiles/rkProj.dir/src/Logger.cpp.o: ../src/Logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rkProj.dir/src/Logger.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rkProj.dir/src/Logger.cpp.o -c /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/Logger.cpp
+
+CMakeFiles/rkProj.dir/src/Logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rkProj.dir/src/Logger.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/Logger.cpp > CMakeFiles/rkProj.dir/src/Logger.cpp.i
+
+CMakeFiles/rkProj.dir/src/Logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rkProj.dir/src/Logger.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/Logger.cpp -o CMakeFiles/rkProj.dir/src/Logger.cpp.s
+
+CMakeFiles/rkProj.dir/src/Logger.cpp.o.requires:
+
+.PHONY : CMakeFiles/rkProj.dir/src/Logger.cpp.o.requires
+
+CMakeFiles/rkProj.dir/src/Logger.cpp.o.provides: CMakeFiles/rkProj.dir/src/Logger.cpp.o.requires
+	$(MAKE) -f CMakeFiles/rkProj.dir/build.make CMakeFiles/rkProj.dir/src/Logger.cpp.o.provides.build
+.PHONY : CMakeFiles/rkProj.dir/src/Logger.cpp.o.provides
+
+CMakeFiles/rkProj.dir/src/Logger.cpp.o.provides.build: CMakeFiles/rkProj.dir/src/Logger.cpp.o
+
+
 CMakeFiles/rkProj.dir/src/TcpServer.cpp.o: CMakeFiles/rkProj.dir/flags.make
 CMakeFiles/rkProj.dir/src/TcpServer.cpp.o: ../src/TcpServer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rkProj.dir/src/TcpServer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rkProj.dir/src/TcpServer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rkProj.dir/src/TcpServer.cpp.o -c /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/TcpServer.cpp
 
 CMakeFiles/rkProj.dir/src/TcpServer.cpp.i: cmake_force
@@ -107,7 +131,7 @@ CMakeFiles/rkProj.dir/src/TcpServer.cpp.o.provides.build: CMakeFiles/rkProj.dir/
 
 CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o: CMakeFiles/rkProj.dir/flags.make
 CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o: ../src/GpioCtrl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o -c /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/GpioCtrl.cpp
 
 CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.i: cmake_force
@@ -132,6 +156,7 @@ CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o.provides.build: CMakeFiles/rkProj.dir/s
 # Object files for target rkProj
 rkProj_OBJECTS = \
 "CMakeFiles/rkProj.dir/main.cpp.o" \
+"CMakeFiles/rkProj.dir/src/Logger.cpp.o" \
 "CMakeFiles/rkProj.dir/src/TcpServer.cpp.o" \
 "CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o"
 
@@ -139,11 +164,12 @@ rkProj_OBJECTS = \
 rkProj_EXTERNAL_OBJECTS =
 
 rkProj: CMakeFiles/rkProj.dir/main.cpp.o
+rkProj: CMakeFiles/rkProj.dir/src/Logger.cpp.o
 rkProj: CMakeFiles/rkProj.dir/src/TcpServer.cpp.o
 rkProj: CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o
 rkProj: CMakeFiles/rkProj.dir/build.make
 rkProj: CMakeFiles/rkProj.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable rkProj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable rkProj"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rkProj.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -152,6 +178,7 @@ CMakeFiles/rkProj.dir/build: rkProj
 .PHONY : CMakeFiles/rkProj.dir/build
 
 CMakeFiles/rkProj.dir/requires: CMakeFiles/rkProj.dir/main.cpp.o.requires
+CMakeFiles/rkProj.dir/requires: CMakeFiles/rkProj.dir/src/Logger.cpp.o.requires
 CMakeFiles/rkProj.dir/requires: CMakeFiles/rkProj.dir/src/TcpServer.cpp.o.requires
 CMakeFiles/rkProj.dir/requires: CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o.requires
 

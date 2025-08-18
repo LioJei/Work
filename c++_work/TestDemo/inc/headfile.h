@@ -21,5 +21,6 @@
 #include <csignal>
 #include <cerrno>
 #include <thread>
+#include <chrono>
 
 #endif //HEAD_FILE_H

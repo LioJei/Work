@@ -94,6 +94,9 @@
       <Unit filename="/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/GpioCtrl.cpp">
          <Option target="rkProj"/>
       </Unit>
+      <Unit filename="/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/Logger.cpp">
+         <Option target="rkProj"/>
+      </Unit>
       <Unit filename="/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/src/TcpServer.cpp">
          <Option target="rkProj"/>
       </Unit>

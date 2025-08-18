@@ -9,6 +9,7 @@
 
 ///头文件声明
 #include "headfile.h"
+#include <Windows.h> // Windows必需
 ///定义声明
 #define SPLIT_SHOW_NUMBER   4   //列举分割后字符串容器前N项
 #define STR2CHR(x)          (std::to_string(x).c_str()) //string转C字符
@@ -65,6 +66,7 @@ public:
      * @brief:      函数指针测试
      * */
     [[maybe_unused]] static int compute(fptr ptr, int val1, int val2);
+    [[maybe_unused]] static void time_test();
 
 private:
     const char* m_name; //实例名

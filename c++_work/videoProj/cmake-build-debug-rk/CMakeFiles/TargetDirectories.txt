@@ -1,0 +1,3 @@
+/home/ly/project/videoTest/cmake-build-debug-rk/CMakeFiles/rebuild_cache.dir
+/home/ly/project/videoTest/cmake-build-debug-rk/CMakeFiles/edit_cache.dir
+/home/ly/project/videoTest/cmake-build-debug-rk/CMakeFiles/videoProj.dir

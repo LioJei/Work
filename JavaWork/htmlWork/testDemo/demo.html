@@ -1,16 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <script>
+        function jumpToPage() {
+            window.location.href = "https://www.baidu.com"; // 替换为你要跳转的链接
+        }
+    </script>
+    <style>
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #00ff66;
+            background-color: #8c00ff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
     <title>你好</title>
 </head>
 <body>
 <h1>欢迎你来到我的第一个WebStorm页面</h1>
-<h2 style="font-size:16px;color:darkslategray;">我用了直接编写css的办法</h2>
+<p style="color: #02ffa6; font-size: 14px;">This is a styled paragraph.</p>
+<abbr title="HyperText Markup Language">HTML</abbr>
+<h2 style="font-size:16px;color:#2f4f4e;">我用了直接编写css的办法</h2>
 //直接用css样式进行美化文字
+<button onclick="jumpToPage()">跳转到示例网站</button>
+<br>
+<a href="https://www.baidu.com" class="button">跳转示例网站</a> <!-- 替换为你要跳转的链接 -->
+<a href="https://www.example.com" target="_blank" style="color: red;">Open in new tab</a>
+<br>
+<label>
+    <input type="text" placeholder="Enter your name">
+    <button onclick="alert('Button clicked!')">Click Me</button>
+</label><!--为你要跳转的链接 -->
+<br>
+<label>
+    <input type="text" value="Default Value" disabled>
+    <input type="checkbox" checked>
+    <input type="text" onchange="alert('Value changed!')">
+</label>
 </body>
 </html>
