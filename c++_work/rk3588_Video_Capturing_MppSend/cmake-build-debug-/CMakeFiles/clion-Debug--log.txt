@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/ly/project/rk_capturing -B /home/ly/project/rk_capturing/cmake-build-debug-
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ly/project/rk_capturing/cmake-build-debug-

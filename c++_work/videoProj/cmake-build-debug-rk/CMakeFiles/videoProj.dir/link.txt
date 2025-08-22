@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/videoProj.dir/main.cpp.o CMakeFiles/videoProj.dir/mpp_pipeline.cpp.o  -o ../bin/videoProj   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib /usr/local/lib/librockchip_mpp.so -lavcodec -lavformat -lavutil -lswresample -ldrm -lavcodec -lavformat -lavutil -lavfilter -lswscale -ldrm -lavcodec -lavformat -lavutil -lswresample -lavfilter -lswscale -lpthread 
