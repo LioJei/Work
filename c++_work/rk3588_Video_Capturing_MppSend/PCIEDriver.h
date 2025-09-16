@@ -24,7 +24,7 @@
 #include <unistd.h>
 #include <cstring>
 ///     调试宏
-#define DEBUG               2 // 0:关闭调试信息, 1:开启调试信息, 2:开启调试信息输出到文件, 3:延时测试
+#define DEBUG               3 // 0:关闭调试信息, 1:开启调试信息, 2:开启数据输出到文件, 3:延时测试
 ///     设备路径定义
 const char *const USER_DEV = "/dev/xdma0_user";
 const char *const C2H_DEV = "/dev/xdma0_c2h_0";
@@ -58,6 +58,7 @@ constexpr size_t PCIE_BUFFER_LINE_SIZE = WIDTH * BYTES_PER_PIXEL;  // 1080P分�
 constexpr size_t PCIE_BUFFER_FRAME_SIZE = WIDTH * HEIGHT * BYTES_PER_PIXEL;  // 1080P分辨率下，一帧YUV数据一行占用空间大小
 constexpr size_t PCIE_BUFFER_SIZE = 4096 * HEIGHT;  // pcie缓存区大小
 constexpr size_t BUFFER_COUNT = 10;  // 缓存块数量;
+constexpr size_t FP_WRITE_SIZE = 50;  // fp_write帧大小
 
 class PCIEDriver {
 public:

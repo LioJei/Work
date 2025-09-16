@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/rkProj.dir/main.cpp.o CMakeFiles/rkProj.dir/src/TcpServer.cpp.o CMakeFiles/rkProj.dir/src/GpioCtrl.cpp.o  -o rkProj -lpthread 

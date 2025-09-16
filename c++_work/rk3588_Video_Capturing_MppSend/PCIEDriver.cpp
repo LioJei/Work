@@ -58,7 +58,26 @@ PCIEDriver::PCIEDriver(unsigned int len)
         exit(EXIT_FAILURE);
     }
     data_fp0.open("/run/media/mmcblk0p8/SDI0_data.yuv", std::ios::out | std::ios::binary | std::ios::trunc);
+    if (!data_fp0.is_open()) {
+        perror("Open SDI0_data.yuv failed");
+        close(dma_fd);
+        close(bram_fd);
+        close(event_fd0);
+        close(event_fd1);
+        munmap(bram_base, map_size);
+        exit(EXIT_FAILURE);
+    }
     data_fp1.open("/run/media/mmcblk0p8/SDI1_data.yuv", std::ios::out | std::ios::binary | std::ios::trunc);
+    if (!data_fp1.is_open()) {
+        perror("Open SDI0_data.yuv failed");
+        close(dma_fd);
+        close(bram_fd);
+        close(event_fd0);
+        close(event_fd1);
+        munmap(bram_base, map_size);
+        data_fp0.close();
+        exit(EXIT_FAILURE);
+    }
 }
 
 PCIEDriver::~PCIEDriver()
@@ -160,12 +179,113 @@ void PCIEDriver::Swap128(uint8_t *data, size_t byte_length) {
     }
 }
 
+#if 1
+static inline uint32_t Swap32X(uint32_t value)
+{
+    return ((value & 0x000000FF) << 24) |
+           ((value & 0x0000FF00) << 8) |
+           ((value & 0x00FF0000) >> 8) |
+           ((value & 0xFF000000) >> 24);
+}
+
+static void inline Swap128X(uint8_t* pData, uint32_t iByteSize)
+{
+    if (pData == NULL || iByteSize == 0)
+    {
+        return ;
+    }
+    if (iByteSize % 4 != 0)
+    {
+        return;
+    }
+
+    uint32_t iWordSize = iByteSize / 4;
+    uint32_t *pWData = (uint32_t *) pData;
+
+    uint32_t iByte1 = 0;
+    uint32_t iByte2 = 0;
+    uint32_t iByte3 = 0;
+    uint32_t iByte4 = 0;
+#if 0
+    // 先进行字节序转换
+    for (size_t i = 0; i < iWordSize; i++)
+    {
+        pWData[i] = Swap32X(pWData[i]);
+    }
+
+    // 再反转字块顺序
+    for (uint32_t i = 0; i < iWordSize; i+= 4)
+    {
+        iByte1 = pWData[i];
+        iByte2 = pWData[i + 1];
+        iByte3 = pWData[i + 2];
+        iByte4 = pWData[i + 3];
+        pWData[i]     = iByte4;
+        pWData[i + 1] = iByte3;
+        pWData[i + 2] = iByte2;
+        pWData[i + 3] = iByte1;
+    }
+#else
+    // 再反转字块顺序
+    for (uint32_t i = 0; i < iWordSize; i+= 4)
+    {
+        iByte1 = Swap32X(pWData[i]);
+        iByte2 = Swap32X(pWData[i + 1]);
+        iByte3 = Swap32X(pWData[i + 2]);
+        iByte4 = Swap32X(pWData[i + 3]);
+
+        pWData[i]     = iByte4;
+        pWData[i + 1] = iByte3;
+        pWData[i + 2] = iByte2;
+        pWData[i + 3] = iByte1;
+    }
+#endif
+
+}
+#else
+
+#define Swap32X(value)                  \
+    ((((value) & 0x000000FF) << 24)|   \
+     (((value) & 0x0000FF00) << 8) |   \
+     (((value) & 0x00FF0000) >> 8) |   \
+     (((value) & 0xFF000000) >> 24))
+
+
+#define Swap128X(pData, iBSize)                          \
+do                                                      \
+{                                                       \
+    if ((pData) && (iBSize) && (((iBSize) % 4) == 0))   \
+    {                                                   \
+        uint32_t iWordSize = (iBSize) / 4;              \
+        uint32_t *pWData = (uint32_t*)(pData);          \
+                                                        \
+        uint32_t iB1 = 0, iB2 = 0, iB3 = 0, iB4 = 0;    \
+        for (uint32_t i = 0; i < iWordSize; i+= 4)      \
+        {                                               \
+            iB1 = Swap32X(pWData[i]);                    \
+            iB2 = Swap32X(pWData[i + 1]);                \
+            iB3 = Swap32X(pWData[i + 2]);                \
+            iB4 = Swap32X(pWData[i + 3]);                \
+            pWData[i]     = iB4;                        \
+            pWData[i + 1] = iB3;                        \
+            pWData[i + 2] = iB2;                        \
+            pWData[i + 3] = iB1;                        \
+        }                                               \
+    }                                                   \
+}while(0)
+
+#endif
+
 void PCIEDriver::DataSplit(uint8_t *data, uint8_t *PCIE_buf) {
+    if (data == nullptr || PCIE_buf == nullptr) {
+        perror("DataSplit failed, parameter is null");
+        return;
+    }
     memset(PCIE_buf, 0, sizeof(PCIE_buf));
     for (int i = 0; i < 1080; i++) {
         memcpy(PCIE_buf + i * PCIE_BUFFER_LINE_SIZE, data + i * DATA_LINE_OFFSET, PCIE_BUFFER_LINE_SIZE);
     }
-    Swap128(PCIE_buf, PCIE_BUFFER_FRAME_SIZE);
+    Swap128X(PCIE_buf, PCIE_BUFFER_FRAME_SIZE);
 #if DEBUG == 1
     for (int i = 0; i < 16; i++) {
         printf("%02x ", PCIE_buf[i]);
@@ -190,8 +310,8 @@ void PCIEDriver::StartSend0() {
             start_time = std::chrono::high_resolution_clock::now();
 #endif
             DataSplit(send_data0, PCIE_buf0);
-#if DEBUG == 2
-            if (index < 100) data_fp0.write((char *) PCIE_buf0, PCIE_BUFFER_FRAME_SIZE);
+#if DEBUG >= 2
+            if (index < FP_WRITE_SIZE) data_fp0.write((char *) PCIE_buf0, PCIE_BUFFER_FRAME_SIZE);
             index++;
 #endif
 #if DEBUG == 3
@@ -218,8 +338,8 @@ void PCIEDriver::StartSend1() {
             start_time = std::chrono::high_resolution_clock::now();
 #endif
             DataSplit(send_data1, PCIE_buf1);
-#if DEBUG == 2
-            if (index < 100) data_fp1.write((char *) PCIE_buf1, PCIE_BUFFER_FRAME_SIZE);
+#if DEBUG >= 2
+            if (index < FP_WRITE_SIZE) data_fp1.write((char *) PCIE_buf1, PCIE_BUFFER_FRAME_SIZE);
             index++;
 #endif
 #if DEBUG == 3
@@ -302,6 +422,14 @@ void PCIEDriver::StartReceive1() {
 }
 
 void PCIEDriver::PCIEReadPage(uint8_t *data, uint32_t addr) const {
+    if (data == nullptr) {
+        perror("PCIEReadPage failed, parameter is null");
+        return;
+    }
+    if(dma_fd < 0){
+        perror("PCIEReadPage failed, dma_fd < 0");
+        return;
+    }
     uint8_t size = pread(dma_fd, data, 4096 * 1080, addr);
     if (size < 0) {
         perror("PCIEReadPage failed");
@@ -309,12 +437,20 @@ void PCIEDriver::PCIEReadPage(uint8_t *data, uint32_t addr) const {
 }
 
 void PCIEDriver::PCIEWriteBram(uint32_t data, uint32_t offset) {
+    if (bram_base == nullptr) {
+        perror("PCIEWriteBram failed, bram_base is null");
+        return;
+    }
     volatile uint32_t *reg_ptr;
     reg_ptr = static_cast<volatile uint32_t *>(bram_base) + offset;
     *reg_ptr = (volatile uint32_t &) data;
 }
 
 uint32_t PCIEDriver::PCIEReadBram(uint32_t offset) {
+    if (bram_base == nullptr) {
+        perror("PCIEReadBram failed, bram_base is null");
+        return 0;
+    }
     volatile uint32_t *reg_ptr;
     reg_ptr = static_cast<uint32_t *>(bram_base) + offset;
     return *reg_ptr;

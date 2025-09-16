@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/videoCapturing.dir/PCIEDriver.cpp.o CMakeFiles/videoCapturing.dir/main.cpp.o  -o ../bin/videoCapturing   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lavcodec -lavformat -lavutil -lswresample -ldrm -lavcodec -lavformat -lavutil -lswscale -ldrm -lavcodec -lavformat -lavutil -lswresample -lswscale -lpthread 

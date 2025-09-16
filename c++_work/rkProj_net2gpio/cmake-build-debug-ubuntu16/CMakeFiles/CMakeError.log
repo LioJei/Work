@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3a489/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3a489.dir/build.make CMakeFiles/cmTC_3a489.dir/build
+make[1]: Entering directory '/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3a489.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_3a489.dir/CheckSymbolExists.c.o   -c /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_3a489
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3a489.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_3a489.dir/CheckSymbolExists.c.o  -o cmTC_3a489 
+CMakeFiles/cmTC_3a489.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_3a489.dir/build.make:97: recipe for target 'cmTC_3a489' failed
+make[1]: *** [cmTC_3a489] Error 1
+make[1]: Leaving directory '/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_3a489/fast' failed
+make: *** [cmTC_3a489/fast] Error 2
+
+File /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_94253/fast"
+/usr/bin/make -f CMakeFiles/cmTC_94253.dir/build.make CMakeFiles/cmTC_94253.dir/build
+make[1]: Entering directory '/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_94253.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_94253.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_94253
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_94253.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_94253.dir/CheckFunctionExists.c.o  -o cmTC_94253 -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_94253.dir/build.make:97: recipe for target 'cmTC_94253' failed
+make[1]: *** [cmTC_94253] Error 1
+make[1]: Leaving directory '/home/lio/project/rkProj/tmp/tmp.8moOyuAty6/cmake-build-debug-ubuntu16/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_94253/fast' failed
+make: *** [cmTC_94253/fast] Error 2
+
+
