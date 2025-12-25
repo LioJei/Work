@@ -1,0 +1,10 @@
+# ninja log v6
+10	605	7829067574245129	CMakeFiles/TestDemo.dir/src/TestDemo.cpp.obj	cb26fd8ab37f2750
+5	624	7829067574195082	CMakeFiles/TestDemo.dir/main.cpp.obj	3842ac4d035f312a
+624	931	7829067580396971	TestDemo.exe	ae8ec1dfc6996932
+12	618	7829068705624444	CMakeFiles/TestDemo.dir/src/TestDemo.cpp.obj	cb26fd8ab37f2750
+5	640	7829068705554405	CMakeFiles/TestDemo.dir/main.cpp.obj	3842ac4d035f312a
+640	817	7829068711902975	TestDemo.exe	ae8ec1dfc6996932
+11	594	7829069062043450	CMakeFiles/TestDemo.dir/src/TestDemo.cpp.obj	cb26fd8ab37f2750
+6	621	7829069061993454	CMakeFiles/TestDemo.dir/main.cpp.obj	3842ac4d035f312a
+622	776	7829069068154080	TestDemo.exe	ae8ec1dfc6996932

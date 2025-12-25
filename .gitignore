@@ -1,0 +1,29 @@
+# Visual Studio and VS Code
+.vs/
+.vscode/
+*.ipch
+*.sdf
+*.opensdf
+*.suo
+*.user
+*.VC.db
+*.VC.VC.opendb
+
+# CMake
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+*.cmake
+
+# Executables and libraries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Debug and release directories
+Debug/
+Release/
+x64/
+x86/
